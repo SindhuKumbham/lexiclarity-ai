@@ -1,0 +1,6 @@
+{
+  "name": "LexiClarity: AI Legal Intelligence & Accessibility Platform",
+  "description": "GenAI-powered legal accessibility suite to simplify complex legal documents, compare contracts, detect risks & inconsistencies, guide decision options, and prepare attorney consultation dossiers with full Master Prompt & Antigravity staging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
