@@ -1,79 +1,98 @@
-# LexiClarity AI: Legal Accessibility & Intelligence Suite
+# \# LexiClarity AI: Legal Accessibility \& Intelligence Suite
 
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Built with: Google Gemini](https://img.shields.io/badge/Built%20with-Google%20Gemini%203.8%20Flash-indigo.svg)](https://ai.google.dev/)
-[![Evaluation Precision: 98.4%](https://img.shields.io/badge/Eval%20Precision-98.4%25-emerald.svg)](/SUBMISSION_DOSSIER.md)
+# 
 
-LexiClarity AI is a production GenAI platform built in Google AI Studio to democratize legal comprehension, contract comparison, risk scanning, and attorney preparation for tenants, freelancers, consumers, and small business owners.
+# !\[License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
----
+# !\[Built with: Google Gemini](https://img.shields.io/badge/Built%20with-Google%20Gemini%202.5%20Flash-indigo.svg)
 
-## ⚡ Key Highlights & Core Capabilities
+# 
 
-1. **Dual-Mode Document Simplifier**: Translates dense legal boilerplate into crystal-clear 8th-grade plain English with live Flesch-Kincaid grade scores.
-2. **Side-by-Side Contract Comparator**: Visual redlining variance engine that exposes "Sneaky Traps" (e.g. stripped parking spaces, accelerated 24h grace periods).
-3. **Risk & Inconsistency Radar**: Flags critical liability shifts, indemnification traps, and internal contract contradictions with one-click counter-proposals.
-4. **Options & Q&A Navigator**: Grounded conversational chat with clause citations ([Section 3.2]) and interactive decision trees for real-world dilemmas.
-5. **Action Deliverables Kit**: Interactive pre-signing checklists, critical dates timelines, and ready-to-send counter-offer negotiation letters.
-6. **Attorney Consultation Dossier**: A 1-page briefing packet featuring executive summaries, top 5 high-yield lawyer questions, and evidence checklists to save hundreds of dollars in billable hours.
-7. **Regional Language Accessibility**: Native plain-language support for **English, Hindi (हिन्दी), Spanish (Español), Telugu (తెలుగు), and Tamil (தமிழ்)**.
-8. **Interactive Evaluation Runner**: Live benchmark suite executing 10 golden test cases measuring token usage, latency (ms), and classification accuracy.
+# LexiClarity AI is a GenAI-powered prototype that helps tenants, freelancers, consumers, and small business owners understand, compare, and navigate legal documents without requiring a legal background.
 
----
+# 
 
-## 🔒 Security & Privacy Guarantees
+# \---
 
-- **Ephemeral In-Memory Processing**: We enforce a **Zero Document Retention** guarantee. Documents uploaded or pasted by users reside exclusively in client/ephemeral memory and are never saved to disks, databases, or training sets.
-- **Server-Side API Key Protection**: The `@google/genai` API calls are handled via a protected proxy backend (`/api/legal-ai`). Secrets are never exposed to browser bundles.
-- **Ethical UPL Compliance**: Prominent disclaimers clarify that the tool provides educational information and analysis, not formal legal advice or representation.
+# 
 
----
+# \## Key Highlights \& Core Capabilities
 
-## 🏗️ Architecture & Dataflow
+# 
 
-```
-[User Document / Pasted Text]
-              │
-              ▼
-[Input Sanitizer & Tokenizer]
-              │
-              ▼
-[Heuristic & Readability Analyzer] ──► [Flesch-Kincaid & Legalese Metrics]
-              │
-              ▼
-[Gemini 2.5 Flash Model Proxy] ──► [@google/genai SDK (Server Backend)]
-              │
-              ▼
-[Multi-Tab Legal Intelligence Experience]
- ├─ Document Simplifier & Jargon Tooltips (Multilingual)
- ├─ Contract Comparator & Sneaky Trap Radar
- ├─ Risk & Inconsistency Scanner
- ├─ "What Are My Options?" Scenario Simulator
- ├─ Action Checklists & Critical Deadlines
- ├─ Attorney Briefing Dossier Generator
- └─ Live Judge Evaluation & Benchmark Runner
-```
+# \- \*\*Dual-Mode Document Simplifier\*\*: Translates dense legal boilerplate into plain English with readability scoring.
 
----
+# \- \*\*Side-by-Side Contract Comparator\*\*: Visual variance engine that highlights added, modified, and removed clauses between two document versions.
 
-## 🚀 Getting Started
+# \- \*\*Risk \& Inconsistency Radar\*\*: Flags liability shifts, indemnification traps, and internal contract contradictions.
 
-```bash
-# 1. Install dependencies
-npm install
+# \- \*\*Options \& Q\&A Navigator\*\*: Document-grounded conversational Q\&A with clause citations, plus scenario-based option guidance.
 
-# 2. Configure environment (optional - AI Studio automatically injects GEMINI_API_KEY)
-cp .env.example .env
+# \- \*\*Action Deliverables Kit\*\*: Pre-signing checklists, critical dates tracking, and counter-offer drafting support.
 
-# 3. Launch development server
-npm run dev
-# Open http://localhost:3000
-```
+# \- \*\*Attorney Consultation Dossier\*\*: A briefing packet summarizing key risks and suggested questions to bring to a lawyer.
 
----
+# \- \*\*Regional Language Accessibility\*\*: Plain-language support for English, Hindi, Spanish, Telugu, and Tamil.
 
-## 📋 Evaluation & Benchmark Suite
+# 
 
-The codebase includes an evaluation suite covering 10 real-world high-risk legal clauses:
-- Run evaluation directly from the **"Judge Review & Submission Kit"** tab inside the web interface.
-- View real-time accuracy, latency in milliseconds, and token economics.
+# \---
+
+# 
+
+# \## Security \& Privacy
+
+# 
+
+# \- \*\*No persistent document storage\*\*: Uploaded or pasted documents are processed in-memory for the session and are not written to a database.
+
+# \- \*\*Server-side API key handling\*\*: Gemini API calls are proxied through a server route; the API key is never exposed in client-side code.
+
+# \- \*\*Ethical disclaimer\*\*: The app clearly states it provides educational information, not formal legal advice, and does not create an attorney-client relationship.
+
+# 
+
+# \---
+
+# 
+
+# \## Architecture
+
+# 
+
+# Input (User Document or Pasted Text) leads to Input Handling and Parsing, which leads to Gemini 2.5 Flash via the google/genai SDK, called through a server-side proxy at /api/legal-ai. The result feeds the multi-tab interface: Document Simplifier with multilingual jargon tooltips, Contract Comparator, Risk and Inconsistency Scanner, Options and Q\&A Navigator, Action Checklists and Deadlines, and the Attorney Briefing Dossier Generator.
+
+# 
+
+# If the Gemini API key is not configured or a request fails, the app falls back to a deterministic heuristic response so the interface remains functional.
+
+# 
+
+# \---
+
+# 
+
+# \## Getting Started
+
+# 
+
+# Run these commands in order:
+
+# 1\. npm install --legacy-peer-deps
+
+# 2\. cp .env.example .env (then add your own GEMINI\_API\_KEY to .env)
+
+# 3\. npm run dev
+
+# 
+
+# \---
+
+# 
+
+# \## Disclaimer
+
+# 
+
+# This tool provides informational and educational assistance only. It does not constitute formal legal advice, does not create an attorney-client relationship, and should not be relied on as a substitute for consulting a licensed attorney.
+
